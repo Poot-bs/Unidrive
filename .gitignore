@@ -1,0 +1,25 @@
+# Maven / Java
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+.vscode/*.log
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Runtime artifacts
+runtime.log
+.app.pid
+hs_err_pid*
+
+# Node-like noise (if frontend tooling added later)
+node_modules/
