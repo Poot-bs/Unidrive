@@ -104,7 +104,27 @@ System:
 - Use HTTPS in production
 - Never commit .env
 
-## 10) GitHub/CI
+## 10) Deploy on Render (Docker)
+
+1. Create a PostgreSQL database on Render.
+2. Create a Web Service from this repository.
+3. In Runtime selection, choose Docker.
+4. Keep `Dockerfile` at repository root (already provided in this project).
+5. Set environment variables in the Web Service:
+  - APP_PERSISTENCE_MODE=postgres
+  - POSTGRES_URL=jdbc:postgresql://<host>:<port>/<database>
+  - POSTGRES_USER=<database-user>
+  - POSTGRES_PASSWORD=<database-password>
+  - POSTGRES_SCHEMA=public
+6. Set Health Check Path to `/api/system/health`.
+7. Deploy latest commit.
+
+Notes:
+
+- The app reads `PORT` automatically from `application.properties`.
+- If using Render internal DB hostname, keep both DB and Web Service on Render.
+
+## 11) GitHub/CI
 
 - .gitignore excludes .env and runtime artifacts
 - GitHub Actions workflow: .github/workflows/ci.yml

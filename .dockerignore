@@ -1,0 +1,11 @@
+.git
+.github
+target
+.env
+.env.*
+*.log
+*.tmp
+.vscode
+README.md
+PRESENTATION.md
+AGENTS.md
